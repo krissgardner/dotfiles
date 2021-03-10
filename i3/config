@@ -193,9 +193,21 @@ gaps inner 27
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 
+
 ##########################################
 # SCREENSHOTS
 ##########################################
 
-bindsym --release $mod+Print exec flameshot full -p ~/Documents/Screenshots/
-bindsym --release Shift+Print exec flameshot gui
+
+
+##########################################
+# WORKSPACE BINDING
+##########################################
+
+# Use "$ xprop | grep CLASS" and click on the window to get the window name
+
+for_window [class="Spotify"] move to workspace $ws10
+assign [class="Google-chrome"] number $ws1
+assign [class="discord"] number $ws9
+
+exec --no-startup-id spotify
